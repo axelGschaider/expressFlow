@@ -1,0 +1,10 @@
+<queue-entries>
+  <queue>
+    <name>default</name>
+    <rate>1/s</rate>
+  </queue>
+  <queue>
+    <name>flowprocessor</name>
+    <rate>20/s</rate>
+  </queue> 
+</queue-entries>

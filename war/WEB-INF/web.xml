@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<context-param>
+		<param-name>loggingConfigLocation</param-name>
+		<param-value>/WEB-INF/logging.properties</param-value>
+	</context-param>
+
+	<!-- Spring Log4J Listener -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<!-- JSON Servlet -->
+	<servlet>
+		<servlet-name>rest-json</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Mobile Human Task Management Servlet -->
+	<servlet>
+		<servlet-name>mobileform</servlet-name>
+		<servlet-class>com.expressflow.servlets.MobileFormManagementServlet</servlet-class>
+	</servlet> 
+	
+	<!-- Mobile Human Task List Management Servlet -->
+	<servlet>
+		<servlet-name>mobileformlist</servlet-name>
+		<servlet-class>com.expressflow.servlets.MobileFormListManagementServlet</servlet-class>
+	</servlet>
+
+	<!-- JavaScript Framework Servlet -->
+	<servlet>
+		<servlet-name>jsmobileform</servlet-name>
+		<servlet-class>com.expressflow.servlets.MobileFormServlet</servlet-class>
+	</servlet>
+	
+		<!-- JavaScript Framework Servlet -->
+	<servlet>
+		<servlet-name>jsmobileformlist</servlet-name>
+		<servlet-class>com.expressflow.servlets.MobileFormListServlet</servlet-class>
+	</servlet>
+	
+	<!-- Human Task Management Servlet -->
+	<servlet>
+		<servlet-name>humantask</servlet-name>
+		<servlet-class>com.expressflow.servlets.HumanTaskManagementServlet</servlet-class>
+	</servlet>
+	
+	<!-- ProcessTableService Servlet -->
+	
+	<!-- Process Execution Servlet -->
+	<servlet>
+		<servlet-name>execprocess</servlet-name>
+		<servlet-class>com.expressflow.servlets.ExecProcessServlet</servlet-class>
+	</servlet>
+	
+	<!-- Google API OAuth Callback -->
+	<servlet>
+		<servlet-name>oauth2callback</servlet-name>
+		<servlet-class>com.expressflow.servlets.OAuth2CallbackServlet</servlet-class>
+	</servlet>
+	
+	<!-- Google API OAuth Callback -->
+	<servlet>
+		<servlet-name>oauth2revoke</servlet-name>
+		<servlet-class>com.expressflow.servlets.RevokeOAuthAccessServlet</servlet-class>
+	</servlet>
+	
+	<!-- Designer -->
+	<servlet>
+		<servlet-name>designer</servlet-name>
+		<servlet-class>com.expressflow.servlets.designer.DesignerServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>tasklist</servlet-name>
+		<servlet-class>com.expressflow.servlets.tasks.TaskListServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>flowprocessor</servlet-name>
+		<servlet-class>com.expressflow.servlets.FlowProcessorServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>timer</servlet-name>
+		<servlet-class>com.expressflow.servlets.timer.TimerServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>EmailReceiverServlet</servlet-name>
+		<servlet-class>com.expressflow.servlets.receivers.EmailReceiver</servlet-class>
+	</servlet>
+
+	<!-- Pipeline Servlet -->
+	<servlet>
+  		<servlet-name>PipelineServlet</servlet-name>
+  		<servlet-class>com.google.appengine.tools.pipeline.impl.servlets.PipelineServlet</servlet-class>
+	</servlet>
+	
+	<!-- MyProcesses Servlet -->
+	<servlet>
+		<servlet-name>myprocessesservlet</servlet-name>
+		<servlet-class>com.expressflow.servlets.manage.ManageProcessesServlet</servlet-class>
+	</servlet>
+
+	<!-- REST-JSON Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>rest-json</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Mobile Human Task Management Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>mobileform</servlet-name>
+		<url-pattern>/mobileform/*</url-pattern>
+	</servlet-mapping> 
+	
+	<!-- Mobile Human Task Management Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>mobileformlist</servlet-name>
+		<url-pattern>/mobileformlist/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- JavaScript Framework Mapping -->
+	<servlet-mapping>
+		<servlet-name>jsmobileform</servlet-name>
+		<url-pattern>/js/mobileform.js</url-pattern>
+	</servlet-mapping>
+	
+	<!-- JavaScript Framework Mapping -->
+	<servlet-mapping>
+		<servlet-name>jsmobileformlist</servlet-name>
+		<url-pattern>/js/mobileformlist.js</url-pattern>
+	</servlet-mapping>
+
+	<!-- Human Task Management Servlet Mapping  -->
+	<servlet-mapping>
+		<servlet-name>humantask</servlet-name>
+		<url-pattern>/humantask/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- ProcessTableService Servlet Mapping -->
+	
+	<!-- Process Execution Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>execprocess</servlet-name>
+		<url-pattern>/exec/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Process - Manager -->
+	<servlet-mapping>
+		<servlet-name>myprocessesservlet</servlet-name>
+		<url-pattern>/myprocesses</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Google API OAuth Callback -->
+	<servlet-mapping>
+		<servlet-name>oauth2callback</servlet-name>
+		<url-pattern>/oauth2callback</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Google API OAuth Revoke -->
+	<servlet-mapping>
+		<servlet-name>oauth2revoke</servlet-name>
+		<url-pattern>/oauth2revoke</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Designer -->
+	<servlet-mapping>
+		<servlet-name>designer</servlet-name>
+		<url-pattern>/designer/Designer</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Designer -->
+	<servlet-mapping>
+		<servlet-name>tasklist</servlet-name>
+		<url-pattern>/mytasks</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- Flow Processor -->
+	<servlet-mapping>
+		<servlet-name>flowprocessor</servlet-name>
+		<url-pattern>/_ah/queue/flowprocessor</url-pattern>
+	</servlet-mapping> 
+
+	<servlet-mapping>
+		<servlet-name>timer</servlet-name>
+		<url-pattern>/timer</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Pipeline Servlet Mapping -->
+	<servlet-mapping>
+  		<servlet-name>PipelineServlet</servlet-name>
+  		<url-pattern>/_ah/pipeline/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EmailReceiverServlet</servlet-name>
+		<url-pattern>/_ah/mail/engine@elasticflow1.appspotmail.com</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!-- Timer Heartbeat Url needs to be secured -->
+	<security-constraint>
+        <web-resource-collection>
+            <url-pattern>/timer</url-pattern>
+            <url-pattern>/_ah/mail/*</url-pattern>
+            <url-pattern>/test/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+ 	</security-constraint> 
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>

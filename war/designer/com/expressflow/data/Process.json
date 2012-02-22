@@ -1,0 +1,9 @@
+{
+	'success': true,
+	'results': [{
+		'id': 1,
+		'name': 'SampleProcess1',
+		'access': 'private',
+		'xml': '<process name="Mobile Subscription" access="private" timesExecuted="0"> <mobileHumanTask Name="Martin Vasko" Email="martin@expressflow.com" __name="Mobile Test"> <variable name="Name" type="Text">Martin Vasko</variable> <variable name="Email" type="Text">martin@expressflow.com</variable> </mobileHumanTask> <assign fromvariable="$Email" outputvariable="$ReceiveEmail" /> <variable name="ReceiveEmail" type="Text" /> <sendEmail from="Not set" to="$ReceiveEmail" respond_to="Not set" subject="Not set">$Name</sendEmail> </process>'
+	}]
+}

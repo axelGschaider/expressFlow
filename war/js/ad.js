@@ -1,0 +1,1 @@
+window.googleAfmcRequest = { client: 'ca-mb-pub-4320468257595773', format: '320x50_mb', output: 'html', slotname: '8843815528', };
