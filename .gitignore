@@ -29,5 +29,3 @@ RCS
 RCSLOG
 SCCS
 _$*
-src/com/expressflow/Constants.java
-src/com/expressflow/security/KeyHolder.java
